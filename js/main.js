@@ -11,6 +11,7 @@
   const nav       = document.getElementById("nav");
   const navToggle = document.getElementById("navToggle");
   const navClose  = document.getElementById("navClose");
+  const backdrop  = document.getElementById("navBackdrop");
   const backTop   = document.getElementById("backTop");
 
   /* ---- Sticky header shadow + back-to-top visibility ---- */
@@ -23,10 +24,11 @@
   onScroll();
 
   /* ---- Mobile nav drawer ---- */
-  function openNav()  { nav.classList.add("open"); }
-  function closeNav() { nav.classList.remove("open"); }
+  function openNav()  { nav.classList.add("open"); document.body.classList.add("nav-open"); }
+  function closeNav() { nav.classList.remove("open"); document.body.classList.remove("nav-open"); }
   navToggle.addEventListener("click", openNav);
   navClose.addEventListener("click", closeNav);
+  if (backdrop) backdrop.addEventListener("click", closeNav);
   nav.querySelectorAll(".nav-link").forEach(function (link) {
     link.addEventListener("click", closeNav);
   });
