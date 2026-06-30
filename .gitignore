@@ -16,3 +16,10 @@ Desktop.ini
 
 # Node (only if you later add tooling)
 node_modules/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
